@@ -1,20 +1,21 @@
-const path = require('path');
-const webpack = require('webpack');
-const ZipPlugin = require('zip-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const ExtensionReloader = require('webpack-extension-reloader');
-const WextManifestWebpackPlugin = require('wext-manifest-webpack-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const ZipPlugin = require('zip-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ExtensionReloader = require('webpack-extension-reloader')
+const WextManifestWebpackPlugin = require('wext-manifest-webpack-plugin')
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const nodeEnv = process.env.NODE_ENV || 'development';
-const targetBrowser = process.env.TARGET_BROWSER;
+const nodeEnv = process.env.NODE_ENV || 'development'
+const targetBrowser = process.env.TARGET_BROWSER
+const isDevServer = process.env.WEBPACK_DEV_SERVER
 
 const extensionReloaderPlugin =
-  nodeEnv === 'development'
+  nodeEnv === 'development' && !isDevServer
     ? new ExtensionReloader({
         port: 9090,
         reloadPage: true,
@@ -26,31 +27,31 @@ const extensionReloaderPlugin =
         },
       })
     : () => {
-        this.apply = () => {};
-      };
+        this.apply = () => {}
+      }
 
 const getExtensionFileType = (browser) => {
   if (browser === 'opera') {
-    return 'crx';
+    return 'crx'
   }
   if (browser === 'firefox') {
-    return 'xpi';
+    return 'xpi'
   }
 
-  return 'zip';
-};
+  return 'zip'
+}
 
 module.exports = {
   devtool: false, // https://github.com/webpack/webpack/issues/1194#issuecomment-560382342
 
   mode: nodeEnv,
 
-  stats: {
-    all: false,
-    builtAt: true,
-    errors: true,
-    hash: true,
-  },
+  // stats: {
+  //   all: false,
+  //   builtAt: true,
+  //   errors: true,
+  //   hash: true,
+  // },
 
   entry: {
     manifest: './source/manifest.json',
@@ -64,6 +65,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'extension', targetBrowser),
     filename: 'js/[name].bundle.js',
+  },
+
+  resolve: {
+    alias: {
+      'webextension-polyfill': './browser-dev-shim.js',
+    },
   },
 
   module: {
@@ -99,15 +106,16 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].css',
-              context: './source/styles/',
-              outputPath: 'css/',
-            },
-          },
-          'extract-loader',
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: '[name].css',
+          //     context: './source/styles/',
+          //     outputPath: 'css/',
+          //   },
+          // },
+          // 'extract-loader',
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -134,9 +142,9 @@ module.exports = {
     // Generate manifest.json
     new WextManifestWebpackPlugin(),
     // Generate sourcemaps
-    new webpack.SourceMapDevToolPlugin({filename: false}),
+    new webpack.SourceMapDevToolPlugin({ filename: false }),
     // Remove style entries js bundle
-    new FixStyleOnlyEntriesPlugin({silent: true}),
+    new FixStyleOnlyEntriesPlugin({ silent: true }),
     new webpack.EnvironmentPlugin(['NODE_ENV', 'TARGET_BROWSER']),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
@@ -161,7 +169,7 @@ module.exports = {
       chunks: ['popup'],
       filename: 'popup.html',
     }),
-    new CopyWebpackPlugin([{from: 'source/assets', to: 'assets'}]),
+    new CopyWebpackPlugin([{ from: 'source/assets', to: 'assets' }]),
     extensionReloaderPlugin,
   ],
 
@@ -179,7 +187,7 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorPluginOptions: {
-          preset: ['default', {discardComments: {removeAll: true}}],
+          preset: ['default', { discardComments: { removeAll: true } }],
         },
       }),
       new ZipPlugin({
@@ -189,4 +197,11 @@ module.exports = {
       }),
     ],
   },
-};
+
+  devServer: {
+    contentBase: path.join(__dirname, 'source'),
+    // watchContentBase: true,
+    port: 9000,
+    hot: true,
+  },
+}
