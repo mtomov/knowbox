@@ -41,7 +41,7 @@ const getExtensionFileType = (browser) => {
   return 'zip'
 }
 
-module.exports = {
+const config = {
   devtool: false, // https://github.com/webpack/webpack/issues/1194#issuecomment-560382342
 
   mode: nodeEnv,
@@ -65,12 +65,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'extension', targetBrowser),
     filename: 'js/[name].bundle.js',
-  },
-
-  resolve: {
-    alias: {
-      'webextension-polyfill': './browser-dev-shim.js',
-    },
   },
 
   module: {
@@ -205,3 +199,13 @@ module.exports = {
     hot: true,
   },
 }
+
+if (nodeEnv == 'development') {
+  config.resolve = {
+    alias: {
+      'webextension-polyfill': './browser-dev-shim.js',
+    },
+  }
+}
+
+module.export = config

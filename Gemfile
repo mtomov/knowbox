@@ -5,8 +5,8 @@ ruby "2.6.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem "puma", "~> 4.1"
 # Use SCSS for stylesheets
@@ -50,9 +50,6 @@ group :test do
   gem "webdrivers"
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem "sorcery"
 gem "oauth2"
 gem "slim"
@@ -61,7 +58,8 @@ gem "sentry-raven"
 gem "delayed_job_active_record"
 gem "foreman"
 gem "batch-loader"
-gem "ahoy_matey"
+# gem "ahoy_matey"
+
 group :development, :test do
   gem "ruby-debug-ide"
   gem "debase"
@@ -86,3 +84,5 @@ group :production, :staging do
   gem "appengine"
   gem "stackdriver"
 end
+
+gem "stimulus_reflex", "~> 3.2"

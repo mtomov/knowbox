@@ -10,6 +10,10 @@ module Knowbox
   class Application < Rails::Application
     config.generators do |g|
       g.assets false
+      g.template_engine :slim
+      g.stylesheets false
+      g.helper false
+      g.jbuilder false
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0

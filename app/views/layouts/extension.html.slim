@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title Gmail Extension Test
+
+    = javascript_pack_tag "extension-popup.js"
+    / link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&family=Work+Sans:400,500,700&display=swap" rel="stylesheet"
+
+    scss:
+      $light-gray: #f1f3f4;
+
+      body {
+        font-family: Roboto,sans-serif;
+        margin: 0;
+      }
+
+      #gmail-sidepane {
+        position: fixed;
+        right: 0;
+        width: 300px;
+        border-left: 2px solid $light-gray;
+        border-right: 2px solid $light-gray;
+      }
+
+      #gmail-mainarea {
+        width: 100%;
+        margin-top: 30px;
+        left: 0;
+        border-left: 2px solid $light-gray;
+        border-right: 2px solid $light-gray;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      #app-toolbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+      }
+
+
+  body
+    #popup
