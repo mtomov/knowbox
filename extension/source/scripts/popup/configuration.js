@@ -8,8 +8,8 @@ if ('production' === process.env.NODE_ENV) {
   host =
     window.location.host.includes('localhost') ||
     window.location.host.includes('127.0.0.1')
-      ? 'http://knowbox.com:3000'
-      : 'http://knowbox.com:3000'
+      ? 'http://localhost:3000'
+      : 'http://localhost:3000'
 }
 
 const hostname = host

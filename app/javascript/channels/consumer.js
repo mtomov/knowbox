@@ -4,6 +4,4 @@
 import { createConsumer } from '@rails/actioncable'
 import { hostname } from '../../../extension/source/scripts/popup/configuration'
 
-console.log('document.cookie ', document.cookie)
-
 export default createConsumer(hostname + '/cable')

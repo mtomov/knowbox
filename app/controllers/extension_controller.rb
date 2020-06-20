@@ -1,6 +1,6 @@
 class ExtensionController < ApplicationController
   before_action :create_user_if_unknown_user
-  layout "extension"
+  layout false
 
   def show
   end

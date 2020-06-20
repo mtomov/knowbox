@@ -16,5 +16,16 @@
 
 import 'channels'
 import 'controllers'
+import { fetchFromServer } from '../../../extension/source/scripts/popup/http_connection'
+import CableReady from 'cable_ready'
 
-console.log('hello from application.js')
+fetchFromServer('/snippets').then((html) => {
+  console.log('Snippets fetched!', html)
+
+  const popupElement = document.querySelector('#popup')
+
+  CableReady.DOMOperations.innerHtml({
+    element: popupElement,
+    html,
+  })
+})
