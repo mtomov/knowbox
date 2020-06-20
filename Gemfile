@@ -27,11 +27,7 @@ gem "jbuilder", "~> 2.7"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-end
+gem "stimulus_reflex", "~> 3.2"
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -40,6 +36,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "spring-commands-rspec"
+  gem "hirb"
+  gem "capistrano", require: false
 end
 
 group :test do
@@ -48,6 +47,7 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+  gem "launchy"
 end
 
 gem "sorcery"
@@ -58,7 +58,7 @@ gem "sentry-raven"
 gem "delayed_job_active_record"
 gem "foreman"
 gem "batch-loader"
-# gem "ahoy_matey"
+gem "rack-cors"
 
 group :development, :test do
   gem "ruby-debug-ide"
@@ -68,16 +68,7 @@ group :development, :test do
   gem "awesome_print"
   gem "log_buddy"
   gem "factory_bot_rails"
-end
-
-group :development do
-  gem "spring-commands-rspec"
-  gem "hirb"
-  gem "capistrano", require: false
-end
-
-group :test do
-  gem "launchy"
+  gem "byebug"
 end
 
 group :production, :staging do
@@ -85,4 +76,6 @@ group :production, :staging do
   gem "stackdriver"
 end
 
-gem "stimulus_reflex", "~> 3.2"
+gem "cable_ready", "~> 4.2"
+
+gem "rails_same_site_cookie", "~> 0.1.8"

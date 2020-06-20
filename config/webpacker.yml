@@ -13,6 +13,9 @@ default: &default
   # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: []
 
+  # additional_paths:
+  #   - extension/node_modules
+
   # Reload manifest.json on all requests so we reload latest compiled packs
   cache_manifest: false
 
@@ -71,10 +74,9 @@ development:
     quiet: false
     pretty: false
     headers:
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Origin": "*"
     watch_options:
-      ignored: '**/node_modules/**'
-
+      ignored: "**/node_modules/**"
 
 test:
   <<: *default

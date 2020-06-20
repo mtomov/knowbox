@@ -1,9 +1,10 @@
 doctype html
 html
   head
-    title Gmail Extension Test
+    title Knowbox extension
 
     = javascript_pack_tag "extension-popup.js"
+    / = action_cable_meta_tag
     / link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&family=Work+Sans:400,500,700&display=swap" rel="stylesheet"
 
     scss:
@@ -43,3 +44,4 @@ html
 
   body
     #popup
+    = yield

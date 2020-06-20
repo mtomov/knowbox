@@ -21,8 +21,8 @@
     "https://*/*"
   ],
 
-  "__dev__content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "__prod__content_security_policy": "script-src 'self'; object-src 'self'",
+  "__dev__content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:3000; object-src 'self'",
+  "__prod__content_security_policy": "script-src 'self' https://knowbox.klutch.ai; object-src 'self'",
 
   "__chrome|firefox__author": "abhijithvijayan",
   "__opera__developer": {

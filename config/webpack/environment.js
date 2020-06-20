@@ -7,10 +7,4 @@ environment.loaders
   'node_modules',
 ]
 
-const config = environment.toWebpackConfig()
-
-config.resolve.alias = {
-  jquery: 'jquery/src/jquery',
-}
-
 module.exports = environment

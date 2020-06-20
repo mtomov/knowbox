@@ -1,4 +1,4 @@
-class Extension::PopupController < ApplicationController
+class Extension::PopupController < ExtensionController
   layout "extension"
 
   def show

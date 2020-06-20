@@ -1,4 +1,4 @@
-console.log('Hello from dev-shim!')
+console.log('Hello from webextension-polyfill dev-shim!')
 
 const browser = {
   tabs: {

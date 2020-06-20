@@ -46,12 +46,12 @@ const config = {
 
   mode: nodeEnv,
 
-  // stats: {
-  //   all: false,
-  //   builtAt: true,
-  //   errors: true,
-  //   hash: true,
-  // },
+  stats: {
+    entrypoints: false,
+    errorDetails: true,
+    modules: false,
+    moduleTrace: false,
+  },
 
   entry: {
     manifest: './source/manifest.json',
@@ -200,7 +200,7 @@ const config = {
   },
 }
 
-if (nodeEnv == 'development') {
+if (nodeEnv == 'development' && isDevServer) {
   config.resolve = {
     alias: {
       'webextension-polyfill': './browser-dev-shim.js',
@@ -208,4 +208,4 @@ if (nodeEnv == 'development') {
   }
 }
 
-module.export = config
+module.exports = config
