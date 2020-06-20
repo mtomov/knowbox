@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.session_store :cache_store, same_site: :none
+  config.session_store :active_record_store, same_site: :none
   # httponly: false
 
   # In the development environment your application's code is reloaded on
