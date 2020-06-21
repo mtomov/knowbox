@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExampleReflex < ApplicationReflex
+class SnippetsReflex < ApplicationReflex
   # Add Reflex methods in this file.
   #
   # All Reflex instances expose the following properties:
@@ -15,10 +15,10 @@ class ExampleReflex < ApplicationReflex
   #
   # Example:
   #
-  #   def example(argument=true)
-  #     # Your logic here...
-  #     # Any declared instance variables will be made available to the Rails controller and view.
-  #   end
-  #
-  # Learn more at: https://docs.stimulusreflex.com
+
+  def add(text = true)
+    @url = "/snippets"
+
+    Snippet.create!(text: text, author: connection.current_user)
+  end
 end

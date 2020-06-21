@@ -1,25 +1,28 @@
-h1 Listing snippets
+div data-controller="popup"
+  #search-field
+    mwc-textfield placeholder="Search" outlined="" class="shaped-outlined"
+      mwc-icon slot="iconTrailing"
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 
-table
-  thead
-    tr
-      th Text
-      th Source
-      th Copied times
-      th
-      th
-      th
+    button#search-button
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 
-  tbody
-    - @snippets.each do |snippet|
-      tr
-        td = snippet.text
-        td = snippet.source
-        td = snippet.copied_count
-        td = link_to 'Show', snippet
-        td = link_to 'Edit', edit_snippet_path(snippet)
-        td = link_to 'Destroy', snippet, data: { confirm: 'Are you sure?' }, method: :delete
+  - @snippets.each do |snippet|
+    .snippet
+      p = snippet.text
 
-br
+  #add-new-button
+    mwc-fab data-action="click->popup#new"
+      mwc-icon slot="icon"
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
 
-= link_to 'New Snippet', new_snippet_path
+  mwc-dialog heading="Add Snippet" data-target="popup.newDialog" data-action="closing->popup#add"
+    / p Paste the contents in the box
+
+
+    mwc-textarea outlined="" fullwidth="" placeholder="Snippet text .." helper="Snippets are small pieces of text that you can easily find later" helperpersistent="" dialoginitialfocus="" rows="5"  data-target="popup.textarea"
+
+    mwc-button slot="primaryAction" dialogaction="save" unelevated=""
+      |  Save
+    mwc-button slot="secondaryAction" dialogaction="close"
+      |  Cancel

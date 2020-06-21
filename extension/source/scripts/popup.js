@@ -4,8 +4,6 @@ import { fetchFromServer } from './popup/http_connection'
 
 const path = '/scripts/popup'
 fetchFromServer(path).then((popupScriptUrl) => {
-  console.log('popupScriptUrl ', popupScriptUrl)
-
   new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = popupScriptUrl
@@ -16,7 +14,7 @@ fetchFromServer(path).then((popupScriptUrl) => {
 })
 
 // import '../styles/popup.scss'
-console.emoji('🦄', 'hiii!')
+// console.emoji('🦄', 'Hi from popup.js')
 
 function openWebPage(url) {
   return browser.tabs.create({ url })
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   })
 
   // eslint-disable-next-line no-console
-  console.emoji('🦄', response)
+  // console.emoji('🦄', response)
 
   // document.getElementById('github__button').addEventListener('click', () => {
   //   return openWebPage(

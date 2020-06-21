@@ -1,0 +1,139 @@
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/variables';
+
+body {
+  color: #4b5157;
+  background-color: $greyWhite;
+}
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --mdc-theme-primary: #e9437a;
+  --mdc-theme-on-primary: white;
+
+  --mdc-theme-secondary: #e9437a;
+  --mdc-theme-on-secondary: white;
+  --mdc-text-field-ink-color: #262d33;
+  --mdc-dialog-min-width: 400px;
+}
+
+.shaped-outlined {
+  --mdc-notched-outline-leading-width: 28px;
+  --mdc-notched-outline-leading-border-radius: 28px 0 0 28px;
+  --mdc-notched-outline-trailing-border-radius: 0 28px 28px 0;
+}
+
+mwc-textfield {
+  width: 100%;
+}
+
+#add-new-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  font-size: 26px;
+}
+
+#popup {
+  background-color: $greyWhite;
+  min-width: 500px;
+  padding: 1rem;
+  min-height: 100vh;
+  position: relative;
+
+  #search-field {
+    position: relative;
+    margin: 0 1rem 2rem 1rem;
+    background-color: #fefefe;
+    border-radius: 28px;
+
+    &:hover {
+      > #search-button {
+        border-color: darken(#bcbfc2, 20%);
+
+        > svg {
+          stroke: darken(#bcbfc2, 20%);
+        }
+      }
+    }
+
+    > #search-button {
+      cursor: pointer;
+      background-color: transparent;
+      position: absolute;
+      padding: 6px 1rem;
+      right: 8px;
+      border-left: 1px solid #d9dadb;
+      top: 9px;
+      > svg {
+        stroke: #bcbfc2;
+      }
+    }
+  }
+
+  // #search-bar {
+  //   border: 0;
+  //   border-radius: 10px;
+  //   height: 40px;
+  //   color: #262d33;
+  //   font-size: 15px;
+  //   background-color: #fff;
+  //   width: 100%;
+  //   padding: 0.2rem 0 0.2rem 1rem;
+  // }
+
+  .snippet {
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  #options__button {
+    width: 50%;
+    background: green;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 5px 10px;
+    justify-content: center;
+    margin: 20px auto;
+    cursor: pointer;
+    opacity: 0.8;
+    display: flex;
+  }
+
+  .links__holder {
+    ul {
+      display: flex;
+      margin-top: 1em;
+      justify-content: space-around;
+
+      li {
+        button {
+          border-radius: 25px;
+          font-size: 20px;
+          font-weight: 600;
+          padding: 10px 17px;
+          background-color: rgba(0, 0, 255, 0.7);
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

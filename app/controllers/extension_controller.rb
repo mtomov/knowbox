@@ -6,7 +6,6 @@ class ExtensionController < ApplicationController
   end
 
   def create_user_if_unknown_user
-    d { current_user }
     return if current_user
 
     @user = User.create!

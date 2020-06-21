@@ -1,1 +1,1 @@
-import '../../../extension/source/scripts/popup'
+import 'scripts/popup'
