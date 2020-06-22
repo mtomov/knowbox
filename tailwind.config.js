@@ -10,6 +10,7 @@ module.exports = {
     'margin',
     'padding',
     'backgroundColor',
+    'textAlign',
     // ...
   ],
 }

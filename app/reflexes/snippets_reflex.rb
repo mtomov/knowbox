@@ -16,9 +16,16 @@ class SnippetsReflex < ApplicationReflex
   # Example:
   #
 
-  def add(text = true)
+  def search(term = "")
+    @term = term
     @url = "/snippets"
+    @snippets = term.present? ? Snippet.search(term).with_pg_search_highlight : Snippet.all
+  end
 
-    Snippet.create!(text: text, author: connection.current_user)
+  def add(text = "")
+    @url = "/snippets"
+    if text.present?
+      Snippet.create!(text: text, author: connection.current_user)
+    end
   end
 end

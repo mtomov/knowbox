@@ -7,9 +7,17 @@ export default class extends ApplicationController {
     this.newDialogTarget.open = true
   }
 
-  add(event) {
-    console.log('event ', event)
+  copyToClipboard(event) {
+    const el = event.currentTarget.parentElement
+    navigator.clipboard.writeText(el.innerText)
+  }
 
+  search(event) {
+    const searchString = event.srcElement.value
+    this.stimulate('SnippetsReflex#search', searchString)
+  }
+
+  add(event) {
     if (event.detail.action != 'save') {
       return
     }

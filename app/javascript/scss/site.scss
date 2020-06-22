@@ -6,13 +6,16 @@
 @import 'base/reset';
 @import 'base/variables';
 
+$default-font-family: Nunito, Roboto, sans-serif;
 body {
   color: #4b5157;
   background-color: $greyWhite;
+  font-family: $default-font-family;
 }
 
 button {
   cursor: pointer;
+  background-color: transparent;
 }
 
 :root {
@@ -23,6 +26,7 @@ button {
   --mdc-theme-on-secondary: white;
   --mdc-text-field-ink-color: #262d33;
   --mdc-dialog-min-width: 400px;
+  --mdc-typography-font-family: $default-font-family;
 }
 
 .shaped-outlined {
@@ -33,6 +37,10 @@ button {
 
 mwc-textfield {
   width: 100%;
+}
+
+.text-muted {
+  color: rgb(142, 142, 142);
 }
 
 #add-new-button {
@@ -49,90 +57,106 @@ mwc-textfield {
   padding: 1rem;
   min-height: 100vh;
   position: relative;
+}
 
-  #search-field {
-    position: relative;
-    margin: 0 1rem 2rem 1rem;
-    background-color: #fefefe;
-    border-radius: 28px;
+#search-field {
+  position: relative;
+  margin: 0 1rem 1rem 1rem;
+  background-color: #fefefe;
+  border-radius: 28px;
+
+  &:hover {
+    > #search-button {
+      border-color: darken(#bcbfc2, 20%);
+
+      > svg {
+        stroke: darken(#bcbfc2, 20%);
+      }
+    }
+  }
+
+  > #search-button {
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    padding: 6px 1rem;
+    right: 8px;
+    border-left: 1px solid #d9dadb;
+    top: 9px;
+    > svg {
+      stroke: #bcbfc2;
+    }
+  }
+}
+
+.snippet {
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  position: relative;
+
+  &:hover {
+    border-color: rgb(211, 211, 211);
+  }
+
+  > .copy-btn {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    display: block;
+    --mdc-theme-on-secondary: #a4a6a8;
+    --mdc-theme-secondary: transparent;
+
+    > svg {
+      stroke: #bcbfc2;
+    }
 
     &:hover {
-      > #search-button {
-        border-color: darken(#bcbfc2, 20%);
+      display: block;
 
-        > svg {
-          stroke: darken(#bcbfc2, 20%);
-        }
-      }
-    }
-
-    > #search-button {
-      cursor: pointer;
-      background-color: transparent;
-      position: absolute;
-      padding: 6px 1rem;
-      right: 8px;
-      border-left: 1px solid #d9dadb;
-      top: 9px;
       > svg {
-        stroke: #bcbfc2;
+        stroke: darken(#bcbfc2, 20%);
       }
     }
   }
+}
 
-  // #search-bar {
-  //   border: 0;
-  //   border-radius: 10px;
-  //   height: 40px;
-  //   color: #262d33;
-  //   font-size: 15px;
-  //   background-color: #fff;
-  //   width: 100%;
-  //   padding: 0.2rem 0 0.2rem 1rem;
-  // }
+h2 {
+  font-size: 25px;
+  text-align: center;
+}
 
-  .snippet {
-    border-radius: 10px;
-    background-color: #fff;
-    margin-bottom: 1rem;
-    padding: 1rem;
-  }
+#options__button {
+  width: 50%;
+  background: green;
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 5px 10px;
+  justify-content: center;
+  margin: 20px auto;
+  cursor: pointer;
+  opacity: 0.8;
+  display: flex;
+}
 
-  h2 {
-    font-size: 25px;
-    text-align: center;
-  }
-
-  #options__button {
-    width: 50%;
-    background: green;
-    color: white;
-    font-weight: 500;
-    border-radius: 15px;
-    padding: 5px 10px;
-    justify-content: center;
-    margin: 20px auto;
-    cursor: pointer;
-    opacity: 0.8;
+.links__holder {
+  ul {
     display: flex;
-  }
+    margin-top: 1em;
+    justify-content: space-around;
 
-  .links__holder {
-    ul {
-      display: flex;
-      margin-top: 1em;
-      justify-content: space-around;
-
-      li {
-        button {
-          border-radius: 25px;
-          font-size: 20px;
-          font-weight: 600;
-          padding: 10px 17px;
-          background-color: rgba(0, 0, 255, 0.7);
-          color: white;
-          cursor: pointer;
-        }
+    li {
+      button {
+        border-radius: 25px;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px 17px;
+        background-color: rgba(0, 0, 255, 0.7);
+        color: white;
+        cursor: pointer;
       }
     }
   }

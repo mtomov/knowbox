@@ -81,3 +81,5 @@ gem "cable_ready", "~> 4.2"
 gem "rails_same_site_cookie", "~> 0.1.8"
 
 gem "activerecord-session_store", "~> 1.1"
+
+gem 'pg_search'

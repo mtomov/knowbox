@@ -1207,68 +1207,6 @@
     webpack-cli "^3.3.10"
     webpack-sources "^1.4.3"
 
-"@spectrum-web-components/button@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/button/-/button-0.7.0.tgz#11c042854570778e3d3a286b1e741459f888b1a4"
-  integrity sha512-o3V9XuiQNkbViCw8niQjN7QMhct+bko1g+TxMBVSMXTcwmz8hfr8E904G3KnEwcw8dma9/Jy3us3JIFY5WuLnw==
-  dependencies:
-    "@spectrum-web-components/icon" "^0.4.8"
-    "@spectrum-web-components/icons-ui" "^0.1.2"
-    "@spectrum-web-components/shared" "^0.4.7"
-    tslib "^2.0.0"
-
-"@spectrum-web-components/icon@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/icon/-/icon-0.4.8.tgz#2571606ac8455bf72afa75d578b167741141af40"
-  integrity sha512-41s1GQg485zoeA6uRJUoDWafvaPneqxYsfDscnaGsS92i3ekX3ICnP8a+YLU7kQgtp6d/gb6dWobOvSgHl3c0A==
-  dependencies:
-    "@spectrum-web-components/iconset" "^0.1.11"
-    tslib "^2.0.0"
-
-"@spectrum-web-components/icons-ui@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/icons-ui/-/icons-ui-0.1.2.tgz#c1a5e7e1ec21fe7bf13604fd2a6ef14aaae8355c"
-  integrity sha512-ICz92B+4Qg/8qi+G7/I0ZgXWZTv6aFqBTKM8TsWN4xTDXVdUGMgezaJhuv0sYNPhPkiNm4MWNbzJkIe9MusMoA==
-  dependencies:
-    "@spectrum-web-components/iconset" "^0.1.11"
-    tslib "^2.0.0"
-
-"@spectrum-web-components/iconset@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/iconset/-/iconset-0.1.11.tgz#0a5f5e7c4461ce6117ec840f7a2fedee49886883"
-  integrity sha512-+MYUhaAZnPg11LQ6httuihi9GREHRN7Dh+N8CVK+qoaCBoHpgHg5DWdtxB7Y2S20gNrCZvjUMiHCz2F/cyzJ3g==
-  dependencies:
-    tslib "^2.0.0"
-
-"@spectrum-web-components/search@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/search/-/search-0.3.4.tgz#c8ddb956a66b4f8382f867fcfc22a600270bad2d"
-  integrity sha512-Hue/h/iuUfgCBKcEV4iAZ2OiPbYdMemR8H9o0gCVtjhGtVw6qMKlqIEygMV8rqLVwwvkiuS8DHa/k8elGha7qw==
-  dependencies:
-    "@spectrum-web-components/button" "^0.7.0"
-    "@spectrum-web-components/icon" "^0.4.8"
-    "@spectrum-web-components/icons-ui" "^0.1.2"
-    "@spectrum-web-components/textfield" "^0.3.9"
-    tslib "^2.0.0"
-
-"@spectrum-web-components/shared@^0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/shared/-/shared-0.4.7.tgz#0ca0affeb9daf89ce2f42b80a3e61d3ff72dd2af"
-  integrity sha512-mO3bh4CiWH7nKytpjsOYstk1Dw/ECTVkbFEA2VouQLW3agSGkA/hoo4DOACjIfrnqLnNuSr+vjcc5GvoPkP6Mg==
-  dependencies:
-    focus-visible "^5.0.2"
-    tslib "^2.0.0"
-
-"@spectrum-web-components/textfield@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@spectrum-web-components/textfield/-/textfield-0.3.9.tgz#b9f3b4a691e5a1f41da44d41ef92d2b28ef4e379"
-  integrity sha512-d2gyZTv4NMyyvJx9ROPD4AbznmZRuHGX5vmLmPNtnxoWO07q5vxwq94VseoWSDA7+lvEwe2ZEblc9W9TYnS72w==
-  dependencies:
-    "@spectrum-web-components/icon" "^0.4.8"
-    "@spectrum-web-components/icons-ui" "^0.1.2"
-    "@spectrum-web-components/shared" "^0.4.7"
-    tslib "^2.0.0"
-
 "@stimulus/core@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@stimulus/core/-/core-1.1.1.tgz#42b0cfe5b73ca492f41de64b77a03980bae92c82"
@@ -3527,11 +3465,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-focus-visible@^5.0.2:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/focus-visible/-/focus-visible-5.1.0.tgz#4b9d40143b865f53eafbd93ca66672b3bf9e7b6a"
-  integrity sha512-nPer0rjtzdZ7csVIu233P2cUm/ks/4aVSI+5KUkYrYpgA7ujgC3p6J7FtFU+AIMWwnwYQOB/yeiOITxFeYIXiw==
 
 follow-redirects@^1.0.0:
   version "1.12.0"
@@ -7783,11 +7716,6 @@ tslib@^1.10.0, tslib@^1.9.0, tslib@^1.9.3:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-
-tslib@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
-  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
 tty-browserify@0.0.0:
   version "0.0.0"

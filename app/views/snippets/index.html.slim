@@ -1,15 +1,32 @@
 div data-controller="popup"
-  #search-field
-    mwc-textfield placeholder="Search" outlined="" class="shaped-outlined"
-      mwc-icon slot="iconTrailing"
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+  #search-field data-reflex-permanent=""
+    mwc-textfield placeholder="Search" type="text" outlined="" class="shaped-outlined" data-action="input->popup#search" autofocus=""
 
     button#search-button
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 
+  - if @snippets.size == 0
+    - if @term.present?
+      .text-center.text-muted
+        | Couldn't find results for&nbsp;
+        strong = @term
+        | .&nbsp; Showing all results instead.
+        br
+        br
+
+      - Snippet.all.order(id: :desc).each do |snippet|
+        = render 'snippet', snippet: snippet
+
+    - else
+      p.text-muted.text-center Add your first snippet from the button below
+
+  br
   - @snippets.each do |snippet|
-    .snippet
-      p = snippet.text
+    = render 'snippet', snippet: snippet
+
+  br
+  br
+  br
 
   #add-new-button
     mwc-fab data-action="click->popup#new"
@@ -19,8 +36,8 @@ div data-controller="popup"
   mwc-dialog heading="Add Snippet" data-target="popup.newDialog" data-action="closing->popup#add"
     / p Paste the contents in the box
 
-
-    mwc-textarea outlined="" fullwidth="" placeholder="Snippet text .." helper="Snippets are small pieces of text that you can easily find later" helperpersistent="" dialoginitialfocus="" rows="5"  data-target="popup.textarea"
+    form
+      mwc-textarea required="" outlined="" fullwidth="" placeholder="Snippet text .." helper="Snippets are small pieces of text that you can easily find later" helperpersistent="" dialoginitialfocus="" rows="5"  data-target="popup.textarea"
 
     mwc-button slot="primaryAction" dialogaction="save" unelevated=""
       |  Save

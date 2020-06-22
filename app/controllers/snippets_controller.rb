@@ -4,7 +4,8 @@ class SnippetsController < ExtensionController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.all
+    @term ||= nil
+    @snippets ||= Snippet.order(id: :desc).all
   end
 
   # GET /snippets/1
