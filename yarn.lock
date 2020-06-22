@@ -3045,6 +3045,11 @@ elliptic@^6.0.0, elliptic@^6.5.2:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+emoji-log@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/emoji-log/-/emoji-log-1.0.2.tgz#f2da615b05c2e415626e2bdd122dfa37d6d87144"
+  integrity sha512-3r9WI8xWU3gaeuPSrHEO9cbTybzlud82v98qeJlwyeGhUhKMleKdvDLegn/CPd1UZiFfTgl5VmJ9OW7I0y7CVA==
+
 emoji-regex@^7.0.1:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
@@ -7970,6 +7975,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webextension-polyfill@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.6.0.tgz#1afd925f3274a0d4848083579b9c0b649a5c6763"
+  integrity sha512-PlYwiX8e4bNZrEeBFxbFFsLtm0SMPxJliLTGdNCA0Bq2XkWrAn2ejUd+89vZm+8BnfFB1BclJyCz3iKsm2atNg==
 
 webpack-assets-manifest@^3.1.1:
   version "3.1.1"

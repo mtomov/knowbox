@@ -1,9 +1,9 @@
 let host = ''
 
 if ('production' === process.env.NODE_ENV) {
-  host = 'https://app.klutch.ai'
+  host = 'https://quiet-hamlet-76527.herokuapp.com'
 } else if ('staging' === process.env.NODE_ENV) {
-  host = 'https://app-staging.klutch.ai'
+  host = 'https://quiet-hamlet-76527.herokuapp.com'
 } else {
   host =
     window.location.host.includes('localhost') ||

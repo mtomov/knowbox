@@ -18,7 +18,10 @@ module Knowbox
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    config.x.host_name = "https://knowbox.klutch.ai"
+    config.session_store :active_record_store, same_site: :none
+    # httponly: false
+
+    config.x.host_name = "https://quiet-hamlet-76527.herokuapp.com"
 
     # config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
     config.action_cable.allowed_request_origins = ["http://localhost:3000", "http://localhost:9000", "knowbox.com", /chrome-extension:\/\/.*/]
@@ -29,5 +32,6 @@ module Knowbox
     # the framework and any gems in your application.
 
     config.hosts << "knowbox.com"
+    config.hosts << "quiet-hamlet-76527.herokuapp.com"
   end
 end
