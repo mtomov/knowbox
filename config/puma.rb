@@ -36,3 +36,16 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+if ENV["RACK_ENV"] == "development"
+
+  # If you didn't place the cert and key under `local-certs` you should change this
+  localhost_key = File.join("config", "local-certs", "localhost-key.pem").to_s
+  localhost_crt = File.join("config", "local-certs", "localhost.pem").to_s
+
+  ssl_bind "0.0.0.0", 3000, {
+    key: localhost_key,
+    cert: localhost_crt,
+    verify_mode: "none"
+  }
+end
