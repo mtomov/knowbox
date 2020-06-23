@@ -273,6 +273,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.1)
     regexp_parser (1.7.1)
     rexml (3.2.4)
     rly (0.2.3)
@@ -432,6 +433,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.2)
   rails_same_site_cookie (~> 0.1.8)
+  redis (~> 4.0)
   rspec-rails
   ruby-debug-ide
   sass-rails (>= 6)

@@ -43,7 +43,7 @@ if ENV["RACK_ENV"] == "development"
   localhost_key = File.join("config", "local-certs", "localhost-key.pem").to_s
   localhost_crt = File.join("config", "local-certs", "localhost.pem").to_s
 
-  ssl_bind "0.0.0.0", 3000, {
+  ssl_bind "0.0.0.0", 9000, {
     key: localhost_key,
     cert: localhost_crt,
     verify_mode: "none"
