@@ -13,12 +13,12 @@
   "homepage_url": "https://quiet-hamlet-76527.herokuapp.com/",
   "short_name": "Knowbox",
 
-  "permissions": [
-    "activeTab",
-    "contextMenus",
+  "__dev__permissions": [
     "https://quiet-hamlet-76527.herokuapp.com/*",
     "http://localhost:3000/*"
   ],
+
+  "__prod__permissions": ["https://quiet-hamlet-76527.herokuapp.com/*"],
 
   "__dev__content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:3000; object-src 'self'",
   "__prod__content_security_policy": "script-src 'self' https://quiet-hamlet-76527.herokuapp.com; object-src 'self'",
