@@ -54,8 +54,8 @@ mwc-textfield {
 #popup {
   background-color: $greyWhite;
   min-width: 500px;
+  min-height: 400px;
   padding: 1rem;
-  min-height: 100vh;
   position: relative;
 }
 
@@ -96,6 +96,7 @@ mwc-textfield {
   padding: 1rem;
   border: 1px solid transparent;
   position: relative;
+  min-height: 4rem;
 
   &:hover {
     border-color: rgb(211, 211, 211);
@@ -107,7 +108,7 @@ mwc-textfield {
     right: 0.5rem;
     display: block;
     --mdc-theme-on-secondary: #a4a6a8;
-    --mdc-theme-secondary: transparent;
+    --mdc-theme-secondary: #fff;
 
     > svg {
       stroke: #bcbfc2;

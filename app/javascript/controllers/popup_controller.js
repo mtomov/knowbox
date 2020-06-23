@@ -26,4 +26,18 @@ export default class extends ApplicationController {
     console.log('textareaValue ', textareaValue)
     this.stimulate('SnippetsReflex#add', textareaValue)
   }
+
+  afterAdd() {
+    this.scroll(1)
+  }
+
+  scroll(delay = 10) {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      })
+    }, delay)
+  }
 }
