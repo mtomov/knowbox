@@ -13,9 +13,6 @@ fetchFromServer(path).then((popupScriptUrl) => {
   })
 })
 
-// import '../styles/popup.scss'
-// console.emoji('🦄', 'Hi from popup.js')
-
 function openWebPage(url) {
   return browser.tabs.create({ url })
 }
@@ -35,18 +32,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // eslint-disable-next-line no-console
   // console.emoji('🦄', response)
-
-  // document.getElementById('github__button').addEventListener('click', () => {
-  //   return openWebPage(
-  //     'https://github.com/abhijithvijayan/web-extension-starter'
-  //   )
-  // })
-
-  // document.getElementById('donate__button').addEventListener('click', () => {
-  //   return openWebPage('https://www.buymeacoffee.com/abhijithvijayan')
-  // })
-
-  // document.getElementById('options__button').addEventListener('click', () => {
-  //   return openWebPage('options.html')
-  // })
 })
