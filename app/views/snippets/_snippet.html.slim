@@ -1,4 +1,6 @@
-.snippet
+- snippet_text = snippet.text.gsub("\n", "<br>")
+
+.snippet data-full-text="#{snippet_text}"
   mwc-fab.copy-btn mini="" data-action="click->popup#copyToClipboard"
     mwc-icon slot="icon"
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
@@ -6,4 +8,4 @@
   - if snippet.respond_to?(:pg_search_highlight)
     p == snippet.pg_search_highlight.gsub("\n", "<br>")
   - else
-    p == snippet.text.gsub("\n", "<br>")
+    p == snippet_text

@@ -9,7 +9,7 @@ export default class extends ApplicationController {
 
   copyToClipboard(event) {
     const el = event.currentTarget.parentElement
-    navigator.clipboard.writeText(el.innerText)
+    navigator.clipboard.writeText(el.dataset.fullText)
   }
 
   search(event) {
