@@ -1,24 +1,36 @@
-# README
+![knowbox-quick-presentation](https://user-images.githubusercontent.com/1651750/86513684-146c2600-be04-11ea-89e2-db787d7571e5.gif)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Browser extension to demonstrate server side rendered popup window. Uses [Stimulus Reflex](https://docs.stimulusreflex.com/) to update the view over websockets.
 
-Things you may want to cover:
+## Install locally
 
-* Ruby version
+```sh
+git clone git@github.com:mtomov/knowbox.git
+bundle
+yarn
+docker-compose up redis db
+bin/rails db:create db:migrate
 
-* System dependencies
+# Start the Rails server
+bin/rails s
 
-* Configuration
+# Start local webpack server in another terminal session
+./bin/webpack-dev-server
+```
 
-* Database creation
+### Run the main view in browser directly
 
-* Database initialization
+![knowbox-local-development](https://user-images.githubusercontent.com/1651750/86512660-ea166a80-bdfb-11ea-8cab-c3a38b42abed.gif)
 
-* How to run the test suite
+Visit http://localhost:3000 where the extension should be running
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Run as a browser extension in popup window
 
-* Deployment instructions
+```sh
+cd extension
+yarn
+yarn run dev:chrome
+```
 
-* ...
+Go to chrome extensions - chrome://extensions/
+Developer Mode ➡️ Load unpacked ➡️ find path to compiled extension `extension/extension/chrome` ➡️ Open
