@@ -1,4 +1,3 @@
-/* global chrome */
 import { hostname } from './configuration'
 
 const fetchFromServer = (url, params = {}) => {

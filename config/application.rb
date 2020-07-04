@@ -31,7 +31,6 @@ module Knowbox
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.hosts << "knowbox.com"
     config.hosts << "quiet-hamlet-76527.herokuapp.com"
   end
 end

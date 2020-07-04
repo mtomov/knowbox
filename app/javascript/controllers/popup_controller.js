@@ -23,7 +23,6 @@ export default class extends ApplicationController {
     }
 
     const textareaValue = this.textareaTarget.value
-    console.log('textareaValue ', textareaValue)
     this.stimulate('SnippetsReflex#add', textareaValue)
   }
 
