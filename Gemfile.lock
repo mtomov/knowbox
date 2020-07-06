@@ -324,8 +324,6 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sentry-raven (3.0.0)
-      faraday (>= 1.0)
     signet (0.14.0)
       addressable (~> 2.3)
       faraday (>= 0.17.3, < 2.0)
@@ -438,7 +436,6 @@ DEPENDENCIES
   ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver
-  sentry-raven
   slim
   slim-rails
   sorcery
